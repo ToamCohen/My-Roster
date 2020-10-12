@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to the NBA site</h1>
+		</header>
+		<input type="text" id="input" />
+		<button id="button">Click</button>
+		<div id="players-container"></div>
+		<script id="players-template" type="text/x-handlebars-template">
+			{{#each player}}
+				<div class="container">
+					<header>
+						<h4>
+							<span class="firstName">
+								{{firstName}}
+							</span>
+							-
+							<span class="lastName">
+								{{lastName}}
+							</span>
+						</h4>
+						<br />
+					</header>
+					<div class="img">
+						<img
+							src=" https://nba-players.herokuapp.com/players/{{lastName}}/{{
+								firstName
+							}}"
+							alt=""
+						/>
+					</div>
+					<div>
+						{{jersey}}
+					</div>
+					<br />
+					<div>
+						{{pos}}
+					</div>
+					<br />
+				</div>
+			{{/each}}
+		</script>
+
+		<script id="stats-template" type="text/x-handlebars-template">
+			<div>
+				name:
+				<li>
+					{{name}}
+				</li>
+				acronym:
+				<li>
+					{{team_acronym}}
+				</li>
+				team name:
+				<li>
+					{{team_name}}
+				</li>
+				games played:
+				<li>
+					{{games_played}}
+				</li>
+				minutes per game:
+				<li>
+					{{minutes_per_game}}
+				</li>
+				goals attempted:
+				<li>
+					{{field_goals_attempted_per_game}}
+				</li>
+				goals made:
+				<li>
+					{{field_goals_made_per_game}}
+				</li>
+				goal percentage:
+				<li>
+					{{field_goal_percentage}}
+				</li>
+				free throw percentage	:
+				<li>
+					{{free_throw_percentage}}
+				</li>
+				three point attempted:
+				<li>
+					{{three_point_attempted_per_game}}
+				</li>
+				three point made:
+				<li>
+					{{three_point_made_per_game}}
+				</li>
+				three point:
+				<li>
+					{{three_point_percentage}}
+				</li>
+				{points per game}:
+				<li>
+					{{points_per_game}}
+				</li>
+				offensive rebounds:
+				<li>
+					{{offensive_rebounds_per_game}}
+				</li>
+				defensive rebounds:
+				<li>
+					{{defensive_rebounds_per_game}}
+				</li>
+				rebounds:
+				<li>
+					{{rebounds_per_game}}
+				</li>
+				assists:
+				<li>
+					{{assists_per_game}}
+				</li>
+				steals:
+				<li>
+					{{steals_per_game}}
+				</li>
+				blocks:
+				<li>
+					{{blocks_per_game}}
+				</li>
+				turnovers:
+				<li>
+					{{turnovers_per_game}}
+				</li>
+				player efficiency rating:
+				<li>
+					{{player_efficiency_rating}}
+				</li>
+			</div>
+		</script>
+
+		<script src="/jquery/dist/jquery.js"></script>
+		<script src="/handlebars/dist/handlebars.js"></script>
+		<script src="Renderer.js"></script>
+		<script src="Api.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
